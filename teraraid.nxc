@@ -1,0 +1,82 @@
+Loop()
+{
+	ImgCmp(menu_bag)
+	{
+		Print("menu_bag")
+		Press(DOWN, 0.10, 0.10)
+		Press(DOWN, 0.10, 0.10)
+		Press(DOWN, 0.10, 0.10)
+		Press(A, 0.10, 0.10)
+	}
+	ImgCmp(menu_portal)
+	{
+		Print("menu_portal")
+		Press(A, 0.10, 0.10)
+	}
+	
+	ImgCmp(portal_offline)
+	{
+		Print("portal_offline")
+		Press(L, 0.10, 10.00)
+	}
+	ImgCmp(oshirase)
+	{
+		Print("portal_oshirase")
+		Press(X, 0.10, 5.00)	
+	}
+	ImgCmp(portal_unioncircle)
+	{
+		Print("menu_unioncircle")
+		Press(DOWN, 0.10, 0.10)
+		Press(A, 0.10, 0.10)		
+	}	
+	ImgCmp(portal_teraraid)
+	{
+		Print("raid")
+		Press(A, 0.10, 0.10)
+	}
+	ImgCmp(raid_search)
+	{
+		Print("raid_search")
+		Press(LEFT, 0.10, 0.10)
+		Press(DOWN, 0.10, 0.10)
+		Press(A, 0.10, 0.10)
+		Loop(100)
+		{
+			Press(A, 0.10, 1.00)
+				
+		}		
+		Loop()
+		{
+			ImgCmp(top1)
+			{
+				Print("raid_end")
+				Break
+			}		
+			Press(A, 0.10, 1.00)
+		}
+	}
+	ImgCmp(raid_battle)
+	{
+		Print("raid_battle")
+		Loop()
+		{
+			ImgCmp(top1)
+			{
+				Print("raid_end")
+				Break
+			}		
+			Press(A, 0.10, 1.00)
+		}
+	}
+	ImgCmp(raid_got)
+	{
+		Print("raid_got")
+		Press(A, 0.10, 0.10)
+	}
+	ImgCmp(top)
+	{
+		Print("top")
+		Press(X, 0.10, 0.10)
+	}	
+}
