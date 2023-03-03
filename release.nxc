@@ -1,0 +1,54 @@
+Loop(1)  // Number of boxes
+{
+  Count  
+  Exec(release_box)
+  Press(R, 0.50, 0.60)
+  Press(DOWN_L, 0.06, 0.10)
+  Press(RIGHT_L, 0.06, 0.10)
+  Press(RIGHT_L, 0.06, 0.10)
+}
+
+Func(release_box)
+{
+  Exec(release_to_right)
+  Exec(release_to_left)
+  Exec(release_to_right)
+  Exec(release_to_left)
+  Exec(release_to_right)
+
+  Press(DOWN_L, 0.05, 0.30)
+}
+
+Func(release_to_left)
+{
+  Loop(5)
+  {
+    Exec(release)
+    Press(LEFT_L, 0.06, 0.20)
+  }
+  Exec(release)
+  Press(DOWN_L, 0.06, 0.10)
+}
+
+Func(release_to_right)
+{
+  Loop(5)
+  {
+    Exec(release)
+    Press(RIGHT_L, 0.06, 0.30)
+  }
+  Exec(release)
+  Press(DOWN_L, 0.06, 0.10)
+}
+
+Func(release)
+{
+  Press(A, 0.30, 0.70)
+  Loop(2)
+  Press(UP_L, 0.06, 0.30)
+  Press(UP_L, 0.06, 0.30)
+  Press(A, 0.30, 0.50)
+  Press(DOWN_L, 0.06, 0.50)
+  Press(A, 0.30, 2.00)
+  Press(A, 0.30, 0.50)
+}
