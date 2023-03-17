@@ -1,82 +1,211 @@
 Loop()
 {
-	ImgCmp(menu_bag)
+	// ---------- Switch ------------------------------
+	ImgCmp(00_switch_controller1)
 	{
-		Print("menu_bag")
-		Press(DOWN, 0.10, 0.10)
-		Press(DOWN, 0.10, 0.10)
-		Press(DOWN, 0.10, 0.10)
-		Press(A, 0.10, 0.10)
+		Print("00_switch_controller1")
+		Press(B, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(menu_portal)
+	ImgCmp(01_switch_controller2)
 	{
-		Print("menu_portal")
-		Press(A, 0.10, 0.10)
+		Print("01_switch_controller2")
+		Press(B, 0.1, 0.1)
+		Continue
 	}
-	
-	ImgCmp(portal_offline)
+	ImgCmp(02_switch_home)
 	{
-		Print("portal_offline")
-		Press(L, 0.10, 10.00)
+		Print("02_switch_home")
+		Press(UP, 0.1, 0.1)
+		Press(LEFT, 0.1, 0.1)
+		Press(LEFT, 0.1, 0.1)
+		Press(A, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(oshirase)
+
+	// ---------- Connext ------------------------------
+	ImgCmp(99_connect)
 	{
-		Print("portal_oshirase")
-		Press(X, 0.10, 5.00)	
+		Print("99_connect")
+		Wait(5.0)
+		Continue
 	}
-	ImgCmp(portal_unioncircle)
+	ImgCmp(99_error1)
 	{
-		Print("menu_unioncircle")
-		Press(DOWN, 0.10, 0.10)
-		Press(A, 0.10, 0.10)		
-	}	
-	ImgCmp(portal_teraraid)
-	{
-		Print("raid")
-		Press(A, 0.10, 0.10)
+		Print("99_error1")
+		Press(A, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(raid_search)
+
+	// ---------- Top ------------------------------
+	ImgCmp(10_top)
 	{
-		Print("raid_search")
-		Press(LEFT, 0.10, 0.10)
-		Press(DOWN, 0.10, 0.10)
-		Press(A, 0.10, 0.10)
-		Loop(100)
-		{
-			Press(A, 0.10, 1.00)
-				
-		}		
-		Loop()
-		{
-			ImgCmp(top1)
-			{
-				Print("raid_end")
-				Break
-			}		
-			Press(A, 0.10, 1.00)
-		}
+		Print("10_top")
+		Press(X, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(raid_battle)
+
+	// ---------- Menu ------------------------------
+	ImgCmp(20_menu_bag)
 	{
-		Print("raid_battle")
-		Loop()
-		{
-			ImgCmp(top1)
-			{
-				Print("raid_end")
-				Break
-			}		
-			Press(A, 0.10, 1.00)
-		}
+		Print("20_menu_bag")
+		Press(DOWN, 0.1, 0.1)
+		Press(DOWN, 0.1, 0.1)
+		Press(DOWN, 0.1, 0.1)
+		Press(A, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(raid_got)
+	ImgCmp(21_menu_pokeportal)
 	{
-		Print("raid_got")
-		Press(A, 0.10, 0.10)
+		Print("21_menu_pokeportal")
+		Press(A, 0.1, 0.1)
+		Continue
 	}
-	ImgCmp(top)
+
+	// ---------- PokePortal ------------------------------
+	ImgCmp(30_pokeportal_offline)
 	{
-		Print("top")
-		Press(X, 0.10, 0.10)
-	}	
+		Print("30_pokeportal_offline")
+		Press(L, 0.1, 10.0)
+		Continue
+	}
+	ImgCmp(31_pokeportal_unioncircle)
+	{
+		Print("31_pokeportal_unioncircle")
+		Press(DOWN, 0.1, 0.1)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(32_pokeportal_teraraidbattle)
+	{
+		Print("32_pokeportal_teraraid")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+
+	// ---------- Search ------------------------------
+	ImgCmp(40_search_offline)
+	{
+		Print("40_search_offline")
+		Press(L, 0.1, 10.0)
+		Continue
+	}
+	ImgCmp(41_search_prepare)
+	{
+		Print("41_search_prepare")
+		Press(A, 0.1, 10.0)
+		Continue
+	}
+	ImgCmp(42_search_random1)
+	{
+		Print("42_search_random1")
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(43_search_random2)
+	{
+		Print("43_search_random2")
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(44_search_random3)
+	{
+		Print("44_search_random3")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(45_search)
+	{
+		Print("45_search")
+		// Press(LEFT, 0.1, 0.1)
+		// Press(DOWN, 0.1, 0.1)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+
+	// ---------- Offline ------------------------------
+	ImgCmp(50_offline_online)
+	{
+		Print("50_offline_online")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(51_offline_oshirase)
+	{
+		Print("51_offline_oshirase")
+		Press(B, 0.1, 5.0)
+		Continue
+	}
+
+	// ---------- TeraRaid ------------------------------
+	ImgCmp(70_teraraid_fight)
+	{
+		Print("70_teraraid_fight")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(71_teraraid_noterastal, 0, 0.9)
+	{
+		Print("71_teraraid_noterastal")
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(71_teraraid_terastal)
+	{
+		Print("71_teraraid_terastal")
+		Press(R, 0.1, 0.5)
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(71_teraraid_move)
+	{
+		Print("71_teraraid_move")
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(72_teraraid_target)
+	{
+		Print("72_teraraid_target")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+
+	// ---------- Finish ------------------------------
+	ImgCmp(80_finish_get1)
+	{
+		Print("80_finish_get1")
+		Press(A, 0.1, 0.5)
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(81_finish_get2)
+	{
+		Print("81_finish_get2")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(82_finish_next)
+	{
+		Print("82_finish_next")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(83_finish_got1)
+	{
+		Print("83_finish_got1")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(84_finish_got2)
+	{
+		Print("84_finish_got2")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
 }
