@@ -30,9 +30,21 @@ Loop()
 		Wait(5.0)
 		Continue
 	}
+	ImgCmp(99_error)
+	{
+		Print("99_error")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
 	ImgCmp(99_error1)
 	{
 		Print("99_error1")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(99_error2)
+	{
+		Print("99_error2")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
