@@ -22,7 +22,11 @@ Loop()
 		Press(A, 0.1, 0.1)
 		Continue
 	}
+	Break
+}
 
+Loop()
+{
 	// ---------- Connext ------------------------------
 	ImgCmp(99_connect)
 	{
@@ -30,9 +34,9 @@ Loop()
 		Wait(5.0)
 		Continue
 	}
-	ImgCmp(99_error)
+	ImgCmp(99_error0)
 	{
-		Print("99_error")
+		Print("99_error0")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
@@ -43,6 +47,12 @@ Loop()
 		Continue
 	}
 	ImgCmp(99_error2)
+	{
+		Print("99_error2")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(99_error3)
 	{
 		Print("99_error2")
 		Press(A, 0.1, 0.1)
@@ -134,7 +144,7 @@ Loop()
 		Print("45_search")
 		Loop()
 		{
-			ImgCmp(46_search_cursor3, 0, 0.95)
+			ImgCmp(46_search_cursor, 0, 0.95)
 			{
 				Print("46_search_cursor")
 				Break
@@ -201,31 +211,36 @@ Loop()
 	ImgCmp(80_finish_get1)
 	{
 		Print("80_finish_get1")
-		Press(A, 0.1, 0.5)
 		Press(A, 0.1, 0.1)
 		Continue
 	}
 	ImgCmp(81_finish_get2)
 	{
 		Print("81_finish_get2")
+		Press(LEFT, 0.1, 0.1)
+		Continue
+	}
+	ImgCmp(82_finish_get3)
+	{
+		Print("82_finish_get3")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
-	ImgCmp(82_finish_next)
+	ImgCmp(83_finish_next)
 	{
-		Print("82_finish_next")
+		Print("83_finish_next")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
-	ImgCmp(83_finish_got1)
+	ImgCmp(84_finish_got1)
 	{
-		Print("83_finish_got1")
+		Print("84_finish_got1")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
-	ImgCmp(84_finish_got2)
+	ImgCmp(85_finish_got2)
 	{
-		Print("84_finish_got2")
+		Print("85_finish_got2")
 		Press(A, 0.1, 0.1)
 		Continue
 	}
