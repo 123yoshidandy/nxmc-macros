@@ -139,21 +139,17 @@ Loop()
 		Press(A, 0.1, 0.1)
 		Continue
 	}
+	ImgCmp(46_search_cursor, 0, 0.95)
+	{
+		Print("46_search_cursor")
+		Press(A, 0.1, 0.1)
+		Continue
+	}
 	ImgCmp(45_search)
 	{
 		Print("45_search")
-		For(Var i=0, i < 20, i++)
-		{
-			ImgCmp(46_search_cursor, 0, 0.95)
-			{
-				Print("46_search_cursor")
-				Break
-			}
-			Print("46_search_cursor_NOT")
-			Press(LEFT, 0.1, 0.1)
-			Press(DOWN, 0.1, 0.50)
-		}
-		Press(A, 0.1, 0.1)
+		Press(LEFT, 0.1, 0.1)
+		Press(DOWN, 0.1, 0.50)
 		Continue
 	}
 
