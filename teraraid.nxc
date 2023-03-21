@@ -4,13 +4,13 @@ Loop()
 	ImgCmp(00_switch_controller1)
 	{
 		Print("00_switch_controller1")
-		Press(B, 0.1, 0.1)
+		Press(B, 0.1, 3.0)
 		Continue
 	}
 	ImgCmp(01_switch_controller2)
 	{
 		Print("01_switch_controller2")
-		Press(B, 0.1, 0.1)
+		Press(B, 0.1, 3.0)
 		Continue
 	}
 	ImgCmp(02_switch_home)
@@ -19,7 +19,7 @@ Loop()
 		Press(UP, 0.1, 0.1)
 		Press(LEFT, 0.1, 0.1)
 		Press(LEFT, 0.1, 0.1)
-		Press(A, 0.1, 0.1)
+		Press(A, 0.1, 5.0)
 		Continue
 	}
 	Break
@@ -142,7 +142,7 @@ Loop()
 	ImgCmp(45_search)
 	{
 		Print("45_search")
-		Loop()
+		For(Var i=0, i < 20, i++)
 		{
 			ImgCmp(46_search_cursor, 0, 0.95)
 			{
@@ -244,4 +244,5 @@ Loop()
 		Press(A, 0.1, 0.1)
 		Continue
 	}
+	Print("----- NOT MATCHED -----")
 }
