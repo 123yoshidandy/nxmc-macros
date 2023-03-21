@@ -132,8 +132,17 @@ Loop()
 	ImgCmp(45_search)
 	{
 		Print("45_search")
-		// Press(LEFT, 0.1, 0.1)
-		// Press(DOWN, 0.1, 0.1)
+		Loop()
+		{
+			ImgCmp(46_search_cursor3, 0, 0.95)
+			{
+				Print("46_search_cursor")
+				Break
+			}
+			Print("46_search_cursor_NOT")
+			Press(LEFT, 0.1, 0.1)
+			Press(DOWN, 0.1, 0.50)
+		}
 		Press(A, 0.1, 0.1)
 		Continue
 	}
