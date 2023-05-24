@@ -1,0 +1,124 @@
+// ポケモン不思議のダンジョン 救助隊DX
+// ともだち救助の自動周回マクロ
+// 
+// 前提
+// ともだち救助依頼は手動で受け取っておく必要がある
+// 
+// 機能
+// ・受け取り済の救助依頼を自動で達成していく
+//     ・基本的には、LとAを連打するだけ
+// ・複数のダンジョンを跨ぐ救助依頼についてもペリッパー連絡所を経由して自動で達成可能
+// ・救助依頼がなくなったら停止する
+// 
+// TODO
+// ・救助依頼の自動受け取り
+// ・救助対象と隣接＆向きが正しくないときの対処（Yボタン）
+// ・深い階層攻略のためのPP、空腹管理
+// ・無駄なA連打の回避
+
+Exec(setup_controller)
+Exec(main)
+
+Func(setup_controller)
+{
+	Loop()
+	{
+		ImgCmp(00_switch_controller1)
+		{
+			Print("00_switch_controller1")
+			Press(B, 0.1, 1.0)
+			Continue
+		}
+		ImgCmp(01_switch_controller2)
+		{
+			Print("01_switch_controller2")
+			Press(B, 0.1, 1.0)
+			Continue
+		}
+		ImgCmp(02_switch_home)
+		{
+			Print("02_switch_home")
+			Press(UP, 0.1, 0.1)
+			Press(LEFT, 0.1, 0.1)
+			Press(LEFT, 0.1, 0.1)
+			Press(A, 0.1, 1.0)
+			Continue
+		}
+		ImgCmp(03_switch_backup)
+		{
+			Print("03_switch_backup")
+			Press(RIGHT, 0.1, 0.1)
+			Press(A, 0.1, 1.0)
+			Break
+		}
+	}
+}
+
+Func(main)
+{
+	Loop()
+	{
+		ImgCmp(pokedan_team)
+		{
+			Print("pokedan_team")
+		}
+		Not
+		{
+			Press(L, 0.1, 3.0)			
+		}
+		Loop(3)
+		{
+			ImgCmp(pokedan_start)
+			{
+				Print("pokedan_start")
+				Press(UP, 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+				Press(R, L, 0.1, 1.0)
+				Press(R, 0.1, 1.0)
+				Press(DOWN, 0.1, 1.0)
+				Press(R, 0.1, 1.0)
+				Press(DOWN, 0.1, 1.0)
+				Press(R, 0.1, 1.0)
+				Press(A 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+				Press(B, 0.1, 1.0)
+				Press(B, 0.1, 1.0)
+				Press(B, 0.1, 1.0)
+				Press(DOWN, 0.1, 1.0)
+				Press(A, 0.1, 1.0)
+			}
+			ImgCmp(pokedan_exit1)
+			{
+				Print("pokedan_exit1")
+				Snipping(0, 0, 1920, 1080)
+				Press(UP, 0.1, 1.0)
+			}
+			ImgCmp(pokedan_exit2)
+			{
+				Print("pokedan_exit2")
+				Snipping(0, 0, 1920, 1080)
+				Press(UP, 0.1, 1.0)
+			}
+			ImgCmp(pokedan_mission_empty1)
+			{
+				Print("pokedan_mission_empty1")
+				Stop
+			}
+			ImgCmp(pokedan_mission_empty3)
+			{
+				Print("pokedan_mission_empty3")
+				Stop
+			}
+			ImgCmp(pokedan_mission_empty4)
+			{
+				Print("pokedan_mission_empty4")
+				Stop
+			}		
+			Press(A, 0.1, 1.0)
+		}	
+	}
+}
+
